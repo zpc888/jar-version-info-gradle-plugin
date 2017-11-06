@@ -94,16 +94,20 @@ public class VersionInfoTask extends DefaultTask {
 			final String resourcesFolder = nvl(getProjectResourcesFolder(), getDefaultProjectResourcesFolder());
 			final String artifactName    = nvl(getProjectName(), getDefaultProjectName());
 			final String fileName        = nvl(getVersionInfoFile(), getDefaultVersionInfoFile());
-			File dir = new File(buildFolder + "/" + resourcesFolder + "/" + artifactName);
+			File dir = new File(buildFolder + "/" + resourcesFolder + "/versionInfo/" + artifactName);
 			if (!dir.exists()) {
 				dir.mkdirs();
 			}
 			File file = new File(dir, fileName);
 			try (FileWriter fw = new FileWriter(file); BufferedWriter bw = new BufferedWriter(fw)) {
 				bw.write("Version=" + v);
+				bw.newLine();
 				bw.write("Revision=" + resolveRevison());
+				bw.newLine();
 				bw.write("Build-Time=" + now());
+				bw.newLine();
 				bw.write("Artificat-Name=" + artifactName);
+				bw.newLine();
 				bw.flush();
 				fw.flush();
 			} catch (IOException ex) {
