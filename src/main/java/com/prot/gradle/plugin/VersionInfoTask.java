@@ -120,6 +120,10 @@ public class VersionInfoTask extends DefaultTask {
 		}
 
 		private String resolveRevison() {
-			return Grgit.open().head().getId();
+			try {
+				return Grgit.open().head().getId();
+			} catch (Exception ex) {
+				return "Error: due to " + ex.getMessage();
+			}
 		}
 }
