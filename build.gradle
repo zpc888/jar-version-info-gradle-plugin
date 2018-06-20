@@ -14,13 +14,14 @@ apply plugin: "java"
 
 repositories {
   jcenter()
+  mavenCentral()
 }
 
 dependencies {
   compile gradleApi()
 //  compile localGroovy() //not needed for Java plugins
 
-  compile 'org.ajoberstar:grgit:2.1.0'
+  compile 'org.ajoberstar:grgit:2.2.1'
 }
 
 pluginBundle {
@@ -35,9 +36,9 @@ pluginBundle {
 	  id = 'com.prot.versioninfo'
       displayName = 'Build Time Version Info Capturor'
       tags = ['version', 'revision']
-      version = '0.4'
+      version = '0.5'
     }
 
-    version = '0.4'
+    version = '0.5'
   }
 }
