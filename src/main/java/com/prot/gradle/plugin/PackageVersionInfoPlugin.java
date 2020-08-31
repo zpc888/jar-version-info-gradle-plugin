@@ -1,7 +1,3 @@
-/*
- * Copyright © 2014-2017 Capco. All rights reserved.
- * Capco Digital Framework.
- */
 package com.prot.gradle.plugin;
 
 import org.gradle.api.Plugin;
